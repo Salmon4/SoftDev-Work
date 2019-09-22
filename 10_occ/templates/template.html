@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> The best title </title>
+  heading is here <br/> <br/>
+</head>
+<body>
+  Team Name: <br>
+  Members: <br> <br>
+  Your random occupation is: {{randOccup}}
+  <table style="width:50%">
+  <tr>
+    <th>Occupation</th>
+    <th>Percentage</th>
+  </tr>
+  {% for key in bunch %}
+    <tr>
+      <td>{{key}}</td>
+      <td>{{bunch.get(key)}}</td>
+    </tr>
+  {% endfor %}
+  </table>
+</body>
+</html>
