@@ -1,7 +1,7 @@
 #Brandon Chen
 #SoftDev1 pd9
-#K2 -- <Title/Topic/Summary>
-#<yyyy>-<mm>-<dd>
+#K2 -- NO-body expects the Spanish Inquisition!/Randomizer/We imported random and used random.choice() to choose from all of the names.
+#2019-09-12
 
 import random
 KREWES = {
