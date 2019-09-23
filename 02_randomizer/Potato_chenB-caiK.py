@@ -1,7 +1,7 @@
-Brandon Chen
-SoftDev1 pd9
-K2 -- <Title/Topic/Summary>
-<yyyy>-<mm>-<dd>
+#Brandon Chen
+#SoftDev1 pd9
+#K2 -- <Title/Topic/Summary>
+#<yyyy>-<mm>-<dd>
 
 import random
 KREWES = {
