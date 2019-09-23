@@ -1,3 +1,8 @@
+Brandon Chen
+SoftDev1 pd9
+K2 -- <Title/Topic/Summary>
+<yyyy>-<mm>-<dd>
+
 import random
 KREWES = {
 	'orpheus': ['Emily', 'Kevin', 'Vishwaa', 'Eric', 'ray', 'Jesse', 'Tiffany', 'Amanda', 'Junhee', 'Jackie ', 'Tyler', 'Emory', 'Ivan', 'Elizabeth', 'Pratham', 'Shaw', 'Eric', 'Yaru', 'Kelvin', 'Hong Wei', 'Michael', 'Kiran', 'Amanda', 'Joseph', 'Tanzim', 'David', 'Yevgeniy'],
