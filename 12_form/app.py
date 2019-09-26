@@ -1,27 +1,32 @@
+# Brandon Chen
+# SoftDev1 pd9
+# K12 -- ECHO ECho echo
+# 2019-09-26
+
+#Team Name: BlueBarry
+#Roster: Brandon Chen, Jason Zheng
+
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
-@app.route("/")
-def hello_world():
-	print(app)
-	return "HELLO WORLD"
 
-@app.route("/foo.html")
-def formss():
-	return render_template("Form.html", foo = "BlueBarry")
+@app.route("/")
+def form():
+	return render_template("Form.html", TeamName = "BlueBarry",
+	 						Roster = "Jason Zheng and Brandon Chen")
 
 @app.route("/auth")
 def authenticate():
-	print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 	print(app)
-	print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
+	print('HEEEEEEEEERRRRRRRRRREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')
 	print(request)
-	print("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC")
+	print ('HEEEEEEEEERRRRRRRRRREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')
 	print(request.args)
-	user = request.args['username']
-	return render_template("Response.html",
-				name = user)
+	return render_template("Response.html", user = request.args['username'],
+							method = request.method,
+	 						TeamName = "BlueBarry",
+							Roster = "Jason Zheng and Brandon Chen")
 
 if __name__ == "__main__":
 	app.debug = True
-	app.run() 
+	app.run()
