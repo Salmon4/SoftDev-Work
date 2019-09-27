@@ -18,9 +18,7 @@ def form():
 @app.route("/auth")
 def authenticate():
 	print(app)
-	print('HEEEEEEEEERRRRRRRRRREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')
 	print(request)
-	print ('HEEEEEEEEERRRRRRRRRREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')
 	print(request.args)
 	return render_template("Response.html", user = request.args['username'],
 							method = request.method,
