@@ -10,13 +10,13 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/") #This is the form page/route
 def form():
 	return render_template("Form.html", TeamName = "BlueBarry",
-	 						Roster = "Jason Zheng and Brandon Chen")
+	 						Roster = "Jason Zheng and Brandon Chen") #passes variables to template
 
 @app.route("/auth")
-def authenticate():
+def authenticate(): #This is the response page/route when you click submit
 	print(app)
 	print(request)
 	print(request.args)
