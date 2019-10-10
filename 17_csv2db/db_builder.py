@@ -15,7 +15,8 @@ db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
 c = db.cursor()               #facilitate db ops
 
 #==========================================================
-
+c.execute("DROP TABLE IF EXISTS courses")
+c.execute("DROP TABLE IF EXISTS students")
 # < < < INSERT YOUR POPULATE-THE-DB CODE HERE > > >
 with open(STUDENT_FILE, newline='') as csvfile:
      reader = csv.DictReader(csvfile)
