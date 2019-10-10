@@ -1,6 +1,6 @@
 #Brandon Chen and Kevin Cai
 #SoftDev Period 9
-#K17 No Trouble
+#skeleton :: SQLITE3 BASICS
 #Oct 2019
 
 import sqlite3   #enable control of an sqlite database
