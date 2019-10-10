@@ -1,4 +1,4 @@
-#Clyde "Thluffy" Sinclair
+#Brandon Chen and Kevin Cai
 #SoftDev
 #skeleton :: SQLITE3 BASICS
 #Oct 2019
