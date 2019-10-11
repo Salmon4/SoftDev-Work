@@ -36,10 +36,15 @@ def getStudentID(name):
      cur = c.execute("SELECT id FROM students WHERE name = ?", [str(name)])
      return cur.fetchone()[0]
 
-print(getStudentID("armin"))
+#print(getStudentID("armin"))
 
 def getStudentGrade(name):
     cur = c.execute("SELECT mark FROM courses WHERE id = ?", [getStudentID(name)])
+    allGrades = cur.fetchall()
+    return allGrades
+
+def getStudentGradeID(id):
+    cur = c.execute("SELECT mark FROM courses WHERE id = ?", [id])
     allGrades = cur.fetchall()
     return allGrades
 
@@ -55,6 +60,15 @@ def getAverage(name):
     return average / length;
 
 #print(getAverage("armin"))
+
+def getAverage(id):
+    allGrades = getStudentGradeID(id)
+    average = 0
+    length = 0
+    for row in allGrades:
+        average += row[0]
+        length += 1;
+    return average / length;
 
 def displayStudent(name):
     return "name: " + name + " id: " + str(getStudentID(name)) + " average: " + str(getAverage(name))
