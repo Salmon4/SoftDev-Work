@@ -51,9 +51,9 @@ def getAverage(name):
     average = 0
     length = 0
 
-    for row1 in allGrades:
-        row = row1[0]
-        average += row
+    for row in allGrades:
+        grade = row[0]
+        average += grade
         length += 1;
     return average / length;
 
@@ -71,10 +71,13 @@ def displayStudent(name):
 c.execute("CREATE TABLE stu_avg (id INTEGER, avg INTEGER);")
 cur = c.execute("SELECT name FROM students")
 allNames = cur.fetchall()
-for name1 in allNames:
-    name = name1[0]
-    command = "INSERT INTO stu_avg VALUES (" + str(getStudentID(name)) + ", " + str(getAverage(name)) + ")"
-    c.execute(command)
+for row in allNames:
+    name = row[0]
+    c.execute("INSERT INTO stu_avg VALUES (?, ?)", (str(getStudentID(name)), str(getAverage(name))))
 
+def addcourse(code, mark, id):
+    c.execute("INSERT INTO courses VALUES (?, ?, ?)", (str(code), str(mark), str(id)))
+
+addcourse("newClass", 100, 0)
 db.commit() #save changes
 db.close()  #close database
