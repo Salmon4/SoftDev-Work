@@ -14,11 +14,12 @@ STUDENT_FILE = "students.csv";
 db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
 c = db.cursor()               #facilitate db ops
 
-
+#delete tables if they exist when compiling
 c.execute("DROP TABLE IF EXISTS courses")
 c.execute("DROP TABLE IF EXISTS students")
 c.execute("DROP TABLE IF EXISTS stu_avg")
 
+#create the tables for courses and students
 with open(STUDENT_FILE, newline='') as csvfile:
      reader = csv.DictReader(csvfile)
      test = "CREATE TABLE students (name TEXT,age INTEGER, id INTEGER);"
@@ -33,9 +34,10 @@ with open(COURSE_FILE, newline='') as csvfile:
       for row in reader:
           c.execute("INSERT INTO courses VALUES (?, ?, ?)", (row["code"], row["mark"], row["id"]))
 
+
 def getStudentID(name):
     cur = c.execute("SELECT id FROM students WHERE name = ?", [str(name)])
-    return cur.fetchone()[0]
+    return cur.fetchone()[0] #select first element in the chosen row
 
 #print(getStudentID("armin"))
 
@@ -52,7 +54,7 @@ def getAverage(name):
     length = 0
 
     for row in allGrades:
-        grade = row[0]
+        grade = row[0] #the grade is the first element in that row
         average += grade
         length += 1;
     return average / length;
