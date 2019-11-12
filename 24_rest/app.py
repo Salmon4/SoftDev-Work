@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route("/")
 def root():
     u = urllib2.urlopen(
-    "https://api.nasa.gov/planetary/apod?api_key=z50CLcXqwuifeitbet"
+    "https://api.nasa.gov/planetary/apod?api_key=jbSyCSZme7kPo6nqEwmbELOLAVP64FqdcEQQ4Cww"
     )
     response = u.read()
     data = json.loads( response )
