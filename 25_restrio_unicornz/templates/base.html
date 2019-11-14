@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en' dir='ltr'>
+  <head>
+    <meta charset='utf-8'>
+    <title>
+      {% block title %}
+        Unicornz
+      {% endblock %}
+    </title>
+
+    {% block header %}
+    <form action= "/trivia">
+      <input type = 'submit' value = 'Trivia'>
+    </form>
+
+    <form action="/nhl">
+      <input type = 'submit' value = 'NHL'>
+    </form>
+
+    <form action="/weather">
+      <input type = 'submit' value = 'weather'>
+    </form>
+    {% endblock %}
+  </head>
+
+  <body>
+      {% block body %}
+      {% endblock %}
+  </body>
+
+  <footer>
+      {% block footer %}
+      {% endblock %}
+  </footer>
+
+</html>
