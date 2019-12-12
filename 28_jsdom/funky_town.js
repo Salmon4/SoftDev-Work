@@ -36,3 +36,23 @@ var randomStudent = function(){
   x = Math.random();
   return pd1[Math.floor(len * x)];
 };
+
+
+var displayFib = function(){
+  x = Math.floor(Math.random()*10);
+  console.log("Fib of " + x + " is " + fibonacci(x));
+};
+
+var displayGCD = function(){
+  x = Math.floor(Math.random()*20);
+  y = Math.floor(Math.random()*20);
+  console.log("GCD of " + x + " and " + y + " is " + gcd(x,y));
+};
+
+var displayRan = function(){
+  console.log("A random student is " + randomStudent());
+};
+
+document.getElementById("fibonacci").addEventListener("click", displayFib);
+document.getElementById("gcd").addEventListener("click", displayGCD);
+document.getElementById("randomStudent").addEventListener("click", displayRan);
