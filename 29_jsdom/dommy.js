@@ -36,7 +36,9 @@ var button = document.getElementById("b");
 button.addEventListener( 'click', addItem);
 
 var num = 0;
+var ftnum = 1;
 var flist = [0,1];
+var ftlist = [1,1];
 var fib = function(n) {
   if ( n < 2 ) {
     return 1;
@@ -64,13 +66,34 @@ var addFib2 = function(e) {
     sum = 1;
     num++;}
   else {
-  sum = flist[num] + flist[num - 1];
-  num++;
-  flist.push(sum);
-}
+    sum = flist[num] + flist[num - 1];
+    num++;
+    flist.push(sum);
+  }
+  item.innerHTML = sum;
+  list.appendChild(item);
+};
+
+var addFact = function(e) {
+  console.log(e);
+  console.log(e);
+  var list = document.getElementById("factlist");
+  var item = document.createElement("li");
+  var sum;
+  if (ftnum == 1) {
+    sum = 1;
+    ftnum++;}
+  else {
+    sum = ftnum * ftlist[ftnum - 1];
+    ftnum++;
+    ftlist.push(sum);
+  }
   item.innerHTML = sum;
   list.appendChild(item);
 };
 
 var fb = document.getElementById("fb");
 fb.addEventListener( "click", addFib2 );
+
+var fb = document.getElementById("ft");
+fb.addEventListener( "click", addFact );
