@@ -1,3 +1,11 @@
+/*
+Team postfix --  Brandon Chen, Kenneth Chin
+SoftDev1 pd9
+K29 -- Sequential Progression III: Season of the Witch
+2019-12-12
+*/
+
+
 var changeHeading = function(e) {
   var h = document.getElementById("h");
   h.innerHTML = e;
@@ -27,6 +35,8 @@ var addItem = function(e) {
 var button = document.getElementById("b");
 button.addEventListener( 'click', addItem);
 
+var num = 0;
+var flist = [0,1];
 var fib = function(n) {
   if ( n < 2 ) {
     return 1;
@@ -35,21 +45,32 @@ var fib = function(n) {
     return fib(n-1) + fib(n-2);
   }
 };
-/**
+
 var addFib = function(e){
   console.log(e);
-  ???
-  ...
-  ???
+  var list = document.getElementById("fiblist");
+  var item = document.createElement("li");
+  item.innerHTML = fib(num++);
+  list.appendChild(item);
 };
-**/
-/**
+
 var addFib2 = function(e) {
   console.log(e);
-  ???
-  ...see QAF re: DYNAMIC PROGRAMMING...
-  ???
+  console.log(e);
+  var list = document.getElementById("fiblist");
+  var item = document.createElement("li");
+  var sum;
+  if (num == 0) {
+    sum = 1;
+    num++;}
+  else {
+  sum = flist[num] + flist[num - 1];
+  num++;
+  flist.push(sum);
+}
+  item.innerHTML = sum;
+  list.appendChild(item);
 };
-**/
+
 var fb = document.getElementById("fb");
-//fb.addEventListener( "click", addFib );
+fb.addEventListener( "click", addFib2 );
