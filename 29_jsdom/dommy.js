@@ -35,10 +35,11 @@ var addItem = function(e) {
 var button = document.getElementById("b");
 button.addEventListener( 'click', addItem);
 
-var num = 0;
-var ftnum = 1;
-var flist = [0,1];
-var ftlist = [1,1];
+var num = 0; //counter for fib
+var ftnum = 1; //counter for fact
+var flist = [0,1]; //list for fib
+var ftlist = [1,1]; //list for fact
+
 var fib = function(n) {
   if ( n < 2 ) {
     return 1;
@@ -56,9 +57,9 @@ var addFib = function(e){
   list.appendChild(item);
 };
 
-var addFib2 = function(e) {
+var addFib2 = function(e) { //adds fib using list
   console.log(e);
-  console.log(e);
+  //console.log(e);
   var list = document.getElementById("fiblist");
   var item = document.createElement("li");
   var sum;
@@ -74,9 +75,9 @@ var addFib2 = function(e) {
   list.appendChild(item);
 };
 
-var addFact = function(e) {
+var addFact = function(e) { //adds fact using list
   console.log(e);
-  console.log(e);
+  //console.log(e);
   var list = document.getElementById("factlist");
   var item = document.createElement("li");
   var sum;
