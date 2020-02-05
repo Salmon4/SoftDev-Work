@@ -1,9 +1,10 @@
 # db_manager is to be used to facilitate database operations.
 
-
+import os
 import sqlite3
 
-DB_FILE = "spew.db"
+DB_FILE = os.path.dirname(__file__)
+DB_FILE += "/spew.db"
 
 
 # add_login takes a username and password and stores it in the users table
