@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}STANDARD TITLE CHANGE{% endblock %}</title>
+    </head>
+    <body>
+        <h1>Spewing Blogs!</h1>
+        {% block header %}
+        <form action = "/logout">
+            Hello, {{username}}
+            <input type="submit" value="Log Out">
+            <input type="submit" name = "myblogs" value="My Blogs" formaction="/blogs">
+            <input type="submit" value = "Home" formaction="/home">
+        </form>
+        {% endblock %}
+        <hr>
+        <br>
+        {% block body %}
+            THIS IS THE BODY
+        {% endblock %}
+        <div>
+            Website created by: Saad Bhuiyan, William Cao, Ethan Chen, Peihua Huang
+        </div>
+    </body>
+</html>
