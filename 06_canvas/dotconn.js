@@ -10,11 +10,10 @@ var draw = function(e) {
     if (lastx != -1 && lasty != -1){
       radius = 5;
       ctx.beginPath();
-      ctx.moveTo(lastx, lasty);
-      ctx.lineTo(x,y);
-      ctx.stroke();
       ctx.arc(x, y, radius, 0, 2 * Math.PI);
       ctx.fill();
+      ctx.moveTo(lastx, lasty);
+      ctx.lineTo(x,y);
       ctx.stroke();
     }
     else {
