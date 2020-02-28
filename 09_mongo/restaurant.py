@@ -1,12 +1,42 @@
-import json
+from bson.json_util import loads
 from pymongo import MongoClient
 
 client = MongoClient('localhost', 27017);
 db = client.K09
 collection = db.restaurants
 
-with open('primer-dataset.json') as f:
-    file_data = json.load(f)
+if (collection.count() == 0):
+    f = open("primer-dataset.json", "r")
+    data = f.readlines()
+    for line in data:
+        collection.insert_one(loads(line))
 
-collection.insert_one(file_data)
-client.close()
+def findBorough(borough):
+    result = collection.find({"borough" : borough})
+    print("\nAll restaurants in the borough " + borough + "\n")
+    for place in result:
+        print(place["name"])
+
+#findBorough("Brooklyn")
+
+def findZip(zipCode):
+    result = collection.find({"address.zipcode" : zipCode})
+    print("\nAll restaurants with the zip code " +zipCode + "\n")
+    for place in result:
+        print(place["name"])
+
+#findZip("10462")
+
+def findZipGrade(zipCode, grade):
+    result = collection.find({"address.zipcode" : zipCode, "grades.grade" : grade})
+    print("\nAll restaurants with the zip code " + zipCode + " and grade " + grade + "\n")
+    for place in result:
+        print(place["name"])
+
+#findZipGrade("10462", "A")
+
+def findZipScore(zipCode, score): 
+    result = collection.find({"address.zipcode" : zipCode})
+    print("\nAll restaurants with the zip code " + zipCode + " and score below " + str(score) + "\n")
+
+findZipScore("10462", 10)
