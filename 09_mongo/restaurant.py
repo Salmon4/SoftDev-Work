@@ -36,7 +36,9 @@ def findZipGrade(zipCode, grade):
 #findZipGrade("10462", "A")
 
 def findZipScore(zipCode, score): 
-    result = collection.find({"address.zipcode" : zipCode})
+    result = collection.find({"address.zipcode" : zipCode, "grades.score" : {"$lt" : score}})
     print("\nAll restaurants with the zip code " + zipCode + " and score below " + str(score) + "\n")
+    for place in result:
+        print(place["name"])
 
-findZipScore("10462", 10)
+#findZipScore("10462", 1)
