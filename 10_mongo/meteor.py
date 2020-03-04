@@ -16,8 +16,26 @@ def findMass(name):
     for result in results:
         print(result["mass"])
 
-#def findLocation(name)
+findMass("Aachen")
 
-#def findClass(name)
+def findLocation(name):
+    results = collection.find({"name" : name})
+    for result in results:
+        ans = result["reclat"] + " " + result["reclong"]
+        print(ans)
 
-#def findYear(name)
+findLocation("Aachen")
+
+def findClass(name):
+    results = collection.find({"name" : name})
+    for result in results:
+        print(result["recclass"])
+
+findClass("Aachen")
+
+def findYear(name):
+    results = collection.find({"name" : name})
+    for result in results:
+        print(result["year"])
+
+findYear("Aachen")
