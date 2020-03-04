@@ -1,3 +1,10 @@
+# The y77d-th95 database is about meteor landings on Earth. Each meteor has their
+# own name, class, mass, date of landing, and location.
+# https://data.nasa.gov/resource/y77d-th95.json
+# To import this database, we opened and red the json file.
+# By looping through each line of the json file, it inserts
+# a document into the mongo database.
+
 from bson.json_util import loads
 from pymongo import MongoClient
 
