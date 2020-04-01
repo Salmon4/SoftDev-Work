@@ -1,0 +1,19 @@
+v1:
+From the code, I can see that there is a table in index.html. There is an
+Eventlistener in the JavaScript that will activate upon click for each item in
+the table. I predict that upon clicking, a message/alert will pop up with the
+text that is contained inside the clicked table. I assumed innerHTML to be the
+text and when I checked it out, my predictions were true. I notice that the
+<tr> tag is used to indicate a row while <td> is each item.
+
+v2:
+The second code contained some similarity with the first. There should still be
+the alert from clicking on a cell but there is another Eventlistener which
+should show an alert when a row is clicked. I think when the row is clicked, the
+entire content of that row will be shown. There is an Eventlistener for the
+table itself which should show everything. I think the cell will alert first,
+then the row, and lastly the table. My predictions were true and I noticed how
+the alerts for rows and the table contained the tags. Clicking on the border
+only shows the alert for the table.
+
+v3: 
