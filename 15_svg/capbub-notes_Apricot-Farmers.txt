@@ -16,4 +16,18 @@ then the row, and lastly the table. My predictions were true and I noticed how
 the alerts for rows and the table contained the tags. Clicking on the border
 only shows the alert for the table.
 
-v3: 
+v3: In this version, we now have the stop propogation command on clicky. I think this
+means the event will only trigger for this listener and the rest won't happen.
+We also have a true parameter for adding the Eventlistener to the table now.
+From the documentation, it seems that the useCapture parameter is now set to true.
+This now means that the table will alert first and the rest will follow in the
+same order.
+My predictions were true. Only the innerHTML of the table was displayed when stop
+propogation wasn't commented out. Also, the innerHTML of the table was displayed first and
+then the rest in order.
+
+v4: In this version, the only change is that now all of the Eventlisteners have their
+useCapture parameter set to true. I think that because of this, the order will be the same as
+in version 2: cell, row, and table.
+My prediction was wrong. The order was actually the complete opposite: table, row,
+and then cell. It's kind of like a stack, where first in is the last out. 
