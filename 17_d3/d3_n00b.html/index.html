@@ -67,6 +67,13 @@ SoftDev2 pd0
     //Transition all bars to the color red
     d3.select(".chart").selectAll("div").transition()
     .style("background-color", "red");
+
+    //transition to double the length of bars
+    barEnter.transition()
+    .duration(750)
+    .delay(function(d, i) { return i * 10; })
+    .style("width", function(d) {
+    return d * 20 + "px"; });
   -------------------------------->
 
   <!--
