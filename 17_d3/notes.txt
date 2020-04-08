@@ -87,3 +87,20 @@ Ex:
 
           .style("width", d => `${d * 10}px`) can be replaced with:
           .style("width", d => `${x(d)}px`)
+
+
+
+
+
+
+
+D3 by example
+
+Given a set of numbers:
+        values = [-1.21, -1.02, 0.61, 0.99, -1.53]
+You can make a histogram by importing the histogram example and using the "with"
+clause to add our set of numbers as the histogram data.
+        import {chart as chart1} from @d3/histogram
+        import {chart as chart1} with {values as data} from "@d3/histogram"
+Height can be adjusted as well:
+        import {chart as chart1} with {values as data, height} from "@d3/histogram"
