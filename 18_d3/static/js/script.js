@@ -13,7 +13,7 @@ var svg = d3.select("#chart")
 var render = function (e){
   d3.json("/static/data/population.json").then(function(data) {
     data = data[1]
-    console.log(data)
+    //console.log(data)
 
     var x = d3.scaleTime()
       .domain(d3.extent(data, function(d) { return d.date; }))
@@ -28,8 +28,36 @@ var render = function (e){
     svg.append("g")
       .call(d3.axisLeft(y));
 
+    svg.append("path")
+      .datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "steelblue")
+      .attr("stroke-width", 1.5)
+      .attr("d", d3.line()
+        .x(function(d) { return x(d.date) })
+        .y(function(d) { return y(d.value) })
+      )
+    var curtain = svg.append("rect")
+      .attr('x', -1 * width)
+      .attr('y', -1 * height)
+      .attr('height', height)
+      .attr('width', width - (width/59))
+      .attr('class', 'curtain')
+      .attr('transform', 'rotate(180)')
+      .style('fill', '#FFFFFF')
   })
+}
+
+
+var transition = function(e){
+  var w = d3.select("rect").attr("width")
+  d3.selectAll("rect").transition()
+    .duration(1000)
+    .attr("width", function(d) { return w - (width/59);});
 }
 
 var renderButton = document.getElementById("render");
 renderButton.addEventListener("click", render)
+
+var transitionButton = document.getElementById("transition");
+transitionButton.addEventListener("click", transition)
